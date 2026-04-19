@@ -15,9 +15,10 @@ void pruebas1()
     try
     {
       ++marte;
+        assert(true);
     } catch (std::out_of_range &e)
     {
-        std::cout<< "Error: "<<std::endl;
+        std::cout<<"Error: " << e.what()<<std::endl;
     }
 
     std::cout<<marte;
@@ -25,12 +26,13 @@ void pruebas1()
     try
     {
         marte.setPosicionX(5000.4567);
+        assert(false);
     } catch (std::out_of_range &e)
     {
-        std::cout<<"Error: ";
+        std::cout<<"Error: " << e.what()<<std::endl;
     }catch (...)
     {
-        std::cout<< "Error genérico, algo ha ocurrido";
+        std::cout<< "Error genérico, algo ha ocurrido.";
     }
 }
 
