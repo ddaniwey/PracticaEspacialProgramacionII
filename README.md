@@ -10,4 +10,4 @@ En la práctica se pedía sobreescribir 1 vez el método registrarEstado(). Pero
 
 Además hemos sobreescrito el operador<< y el operador++. He decidido que sería una buena idea el operador++ ya que así rápidamente podemos subirle la prioridad, en caso de tener prioridad.
 
-Finalmente, para subir nota utilizaré una pila y una clase Nodo, para poder administrarlas.
+Finalmente, para subir nota utilizaré assets, que SOLO se utilizan en el momento de depurar el programa. Cuando los utilzas el programa no debería llegas hasta el asset si está bien programado. Vamos a poner todo en práctica en el main.
