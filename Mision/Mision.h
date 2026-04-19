@@ -89,14 +89,14 @@ public:
     {
         registrarEstado();
         nota = note;
-        if (prio<=0 || prio = 404)
+        if (prio<=0 || prio == 404)
         {
             throw std::out_of_range("La prioridad tiene que ser mayor a 0 y no puede ser 404");
         }
         prioridad = prio;
     }
 
-    void verEstado()
+    void verEstado ()
     {
         imprimir(std::cout);
     }
