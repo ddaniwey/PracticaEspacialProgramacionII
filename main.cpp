@@ -42,7 +42,7 @@ void pruebas1()
 void pruebas2()
 {
     auto laserVerde = std::make_shared<Laser>("Laser", "Sirve para disparar y freir a los enemigos");
-    auto escudoMarine = std::make_shared<Laser>("Escudo de la marina", "Escudo fabricado con escamas de sirena. No hay nada que pueda sobrepasarlo");
+    auto escudoMarine = std::make_shared<Escudo>("Escudo de la marina", "Escudo fabricado con escamas de sirena. No hay nada que pueda sobrepasarlo");
 
     auto escudoOvni = std::make_shared<Laser>("Escudo ovni", "Desconocido");
 
@@ -52,6 +52,14 @@ void pruebas2()
 
     mochila.eliminarArtilugio(escudoOvni);
     mochila.verArtilugios();
+    std::cout<<""<<std::endl;
+
+    Artilugio artilugioGenerico = {"Artilugio genérico", "Esto es una comprobación de la clase Base"};
+    artilugioGenerico.usar();
+    std::cout<<""<<std::endl;
+    laserVerde->usar();
+    std::cout<<""<<std::endl;
+    escudoMarine->usar();
 
 }
 
