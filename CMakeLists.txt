@@ -9,4 +9,7 @@ add_executable(PracticaEspacioPrograII main.cpp
         ArtilugiosDerivados/Laser.h
         ArtilugiosDerivados/Escudo.h
         MochilaTemplate/Mochila.h
+        Recursos/Recurso.h
+        Recursos/RecursoNatural.h
+        Recursos/RecursoTecnologico.h
 )

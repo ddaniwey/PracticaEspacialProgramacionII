@@ -5,6 +5,9 @@
 #include "ArtilugiosDerivados/Escudo.h"
 #include "ArtilugiosDerivados/Laser.h"
 #include "MochilaTemplate/Mochila.h"
+#include "Recursos/Recurso.h"
+#include "Recursos/RecursoNatural.h"
+#include "Recursos/RecursoTecnologico.h"
 
 void pruebas1()
 {
@@ -63,9 +66,25 @@ void pruebas2()
 
 }
 
+void pruebas3()
+{
+    Recurso recursoGenerico("Materiales", 100);
+    RecursoNatural madera("Madera", 50, "Bosque");
+    RecursoTecnologico circuitos("Circuitos", 25, 3);
+
+    recursoGenerico.mostrarInfo();
+    std::cout<<""<<std::endl;
+    madera.mostrarInfo();
+    std::cout<<""<<std::endl;
+    circuitos.mostrarInfo();
+    std::cout<<""<<std::endl;
+}
+
 int main()
 {
     // pruebas1();
     pruebas2();
+    std::cout<<""<<std::endl;
+    pruebas3();
     return 0;
 }
