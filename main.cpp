@@ -1,7 +1,10 @@
 #include <iostream>
 #include "Mision/Mision.h"
 #include <cassert>
-
+#include "Artilugio/Artilugio.h"
+#include "ArtilugiosDerivados/Escudo.h"
+#include "ArtilugiosDerivados/Laser.h"
+#include "MochilaTemplate/Mochila.h"
 
 void pruebas1()
 {
@@ -36,8 +39,25 @@ void pruebas1()
     }
 }
 
+void pruebas2()
+{
+    auto laserVerde = std::make_shared<Laser>("Laser", "Sirve para disparar y freir a los enemigos");
+    auto escudoMarine = std::make_shared<Laser>("Escudo de la marina", "Escudo fabricado con escamas de sirena. No hay nada que pueda sobrepasarlo");
+
+    auto escudoOvni = std::make_shared<Laser>("Escudo ovni", "Desconocido");
+
+    Mochila<Artilugio> mochila;
+    mochila.addArtilugio(laserVerde);
+    mochila.addArtilugio(escudoMarine);
+
+    mochila.eliminarArtilugio(escudoOvni);
+    mochila.verArtilugios();
+
+}
+
 int main()
 {
-    pruebas1();
+    // pruebas1();
+    pruebas2();
     return 0;
 }

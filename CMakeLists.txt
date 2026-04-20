@@ -4,4 +4,9 @@ project(PracticaEspacioPrograII)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(PracticaEspacioPrograII main.cpp
-        Mision/Mision.h)
+        Mision/Mision.h
+        Artilugio/Artilugio.h
+        ArtilugiosDerivados/Laser.h
+        ArtilugiosDerivados/Escudo.h
+        MochilaTemplate/Mochila.h
+)
