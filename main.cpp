@@ -68,11 +68,9 @@ void pruebas2()
 
 void pruebas3()
 {
-    Recurso recursoGenerico("Materiales", 100);
-    RecursoNatural madera("Madera", 50, "Bosque");
-    RecursoTecnologico circuitos("Circuitos", 25, 3);
+    RecursoNatural madera("Madera", 50, "Bosque", 1000);
+    RecursoTecnologico circuitos("Circuitos", 25, 3, 1000);
 
-    recursoGenerico.mostrarInfo();
     std::cout<<""<<std::endl;
     madera.mostrarInfo();
     std::cout<<""<<std::endl;
@@ -80,11 +78,52 @@ void pruebas3()
     std::cout<<""<<std::endl;
 }
 
+void pruebasUltimaPractica()
+{
+    std::vector<std::unique_ptr<Recurso>> coleccion;
+    try {
+        coleccion.push_back(std::make_unique<RecursoNatural>("Madera", 10, "Bosque", 5));
+        coleccion.push_back(std::make_unique<RecursoTecnologico>("MicroChip", 3, 2, 50));
+        coleccion.push_back(std::make_unique<RecursoNatural>("Agua", 20, "Rio", 20500));
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Error de argumento: " << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Error general: " << e.what() << std::endl;
+    }
+        try
+        {
+            coleccion.push_back(std::make_unique<RecursoTecnologico>("IA", 1, -1, 100));
+        } catch (std::invalid_argument &e)
+        {
+            std::cout<<"Error: " << e.what()<<std::endl;
+        }
+
+        std::cout << "  === LISTADO DE RECURSOS ===  "<<std::endl;
+
+        float total = 0;
+
+        for (const auto& recurso : coleccion) {
+            recurso->mostrarInfo();
+            float coste = recurso->calcularCoste();
+            std::cout << "Coste: " << coste << std::endl;
+            total += coste;
+        }
+
+        std::cout << "Coste total: " << total << std::endl;
+
+    auto piedra = std::make_unique<RecursoNatural>("Piedra",43, "Caverna", 0);
+    std::cout<<"Cantidad de piedras: " <<piedra->getCantidad()<<std::endl;
+    (*piedra)++;
+    std::cout<<"Cantidad de piedras: " <<piedra->getCantidad()<<std::endl;
+
+}
+
 int main()
 {
-    // pruebas1();
-    pruebas2();
+    //pruebas1();
+    //pruebas2();
     std::cout<<""<<std::endl;
-    pruebas3();
+   // pruebas3();
+    pruebasUltimaPractica();
     return 0;
 }
